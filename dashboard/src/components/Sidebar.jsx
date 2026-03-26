@@ -1,11 +1,13 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import {
-  LayoutDashboard, Building2, Users, Handshake, Layers, FileText,
-  GraduationCap, Package, ShoppingCart, Warehouse, Truck,
-  Banknote, Heart, ShoppingBag, School, Shield, Key,
-  GitBranch, Bell, ClipboardList, ChevronDown, ChevronRight,
-  Stethoscope, Activity
+  LayoutDashboard, Building2, DollarSign, Heart, Shield, Truck,
+  ShoppingBag, GraduationCap, ChevronDown, ChevronRight, Activity,
+  Hospital, Users, Handshake, Layers, BookOpen, FileText, Package,
+  Briefcase, TicketCheck, UserCog, Wallet, Landmark, PiggyBank,
+  TrendingUp, CreditCard, FlaskConical, ClipboardList, Scan, Radiation,
+  Key, GitBranch, Bell, ShoppingCart, Warehouse, Network, Tag,
+  FileQuestion, Award
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -18,56 +20,87 @@ const navConfig = [
   },
   {
     label: 'BUSINESS',
+    catPath: '/cat/business',
+    catIcon: Building2,
     items: [
-      { label: 'Hospital (HMS)', icon: Building2, path: '/hms' },
-      { label: 'HR Management', icon: Users, path: '/hrms' },
-      { label: 'CRM', icon: Handshake, path: '/crm' },
-      { label: 'ERP', icon: Layers, path: '/erp' },
-      { label: 'Content (CMS)', icon: FileText, path: '/cms' },
-      { label: 'Learning (LMS)', icon: GraduationCap, path: '/lms' },
-    ]
-  },
-  {
-    label: 'OPERATIONS',
-    items: [
-      { label: 'Inventory (IMS)', icon: Package, path: '/ims' },
-      { label: 'Orders (OMS)', icon: ShoppingCart, path: '/oms' },
-      { label: 'Warehouse (WMS)', icon: Warehouse, path: '/wms' },
-      { label: 'Logistics', icon: Truck, path: '/logistics' },
+      { label: 'Hospital (HMS)',   icon: Hospital,     path: '/hms' },
+      { label: 'HR Management',   icon: Users,        path: '/hrms' },
+      { label: 'CRM',             icon: Handshake,    path: '/crm' },
+      { label: 'ERP',             icon: Layers,       path: '/erp' },
+      { label: 'Learning (LMS)',  icon: BookOpen,     path: '/lms' },
+      { label: 'Content (CMS)',   icon: FileText,     path: '/cms' },
+      { label: 'Inventory (IMS)', icon: Package,      path: '/ims' },
+      { label: 'Projects (PMS)',  icon: Briefcase,    path: '/pms' },
+      { label: 'Tickets (TMS)',   icon: TicketCheck,  path: '/tms' },
+      { label: 'Engagement (EMS)',icon: UserCog,      path: '/ems' },
     ]
   },
   {
     label: 'FINANCE',
+    catPath: '/cat/finance',
+    catIcon: DollarSign,
     items: [
-      { label: 'Finance & Banking', icon: Banknote, path: '/finance' },
+      { label: 'Accounts',        icon: Wallet,       path: '/finance' },
+      { label: 'Assets (AMS)',    icon: Package,      path: '/ams' },
+      { label: 'Banking (BFSI)',  icon: Landmark,     path: '/bfsi' },
+      { label: 'Budgets (BMS)',   icon: PiggyBank,    path: '/bms' },
+      { label: 'Loans (LMS)',     icon: DollarSign,   path: '/lms-finance' },
+      { label: 'Loan Orig. (LOS)',icon: FileText,     path: '/los' },
+      { label: 'Portfolio (PMS)', icon: TrendingUp,   path: '/pms-finance' },
     ]
   },
   {
     label: 'HEALTHCARE',
+    catPath: '/cat/healthcare',
+    catIcon: Heart,
     items: [
-      { label: 'EMR / EHR / LIS', icon: Stethoscope, path: '/healthcare' },
-    ]
-  },
-  {
-    label: 'E-COMMERCE',
-    items: [
-      { label: 'E-Commerce', icon: ShoppingBag, path: '/ecommerce' },
-    ]
-  },
-  {
-    label: 'EDUCATION',
-    items: [
-      { label: 'Education', icon: School, path: '/education' },
+      { label: 'Health Records (EHR)', icon: FileText,       path: '/ehr' },
+      { label: 'Medical Rec. (EMR)',   icon: ClipboardList,  path: '/emr' },
+      { label: 'Laboratory (LIS)',     icon: FlaskConical,   path: '/lis' },
+      { label: 'Imaging (PACS)',       icon: Scan,           path: '/pacs' },
+      { label: 'Radiology (RIS)',      icon: Radiation,      path: '/ris' },
     ]
   },
   {
     label: 'IT & SECURITY',
+    catPath: '/cat/it',
+    catIcon: Shield,
     items: [
-      { label: 'Identity (IAM)', icon: Shield, path: '/iam' },
-      { label: 'SSO', icon: Key, path: '/sso' },
-      { label: 'Workflow', icon: GitBranch, path: '/workflow' },
-      { label: 'Notifications', icon: Bell, path: '/notifications' },
-      { label: 'Audit Logs', icon: ClipboardList, path: '/audit' },
+      { label: 'Identity (IAM)', icon: Shield,        path: '/iam' },
+      { label: 'SSO',            icon: Key,           path: '/sso' },
+      { label: 'Workflow',       icon: GitBranch,     path: '/workflow' },
+      { label: 'Notifications',  icon: Bell,          path: '/notifications' },
+      { label: 'Audit Logs',     icon: ClipboardList, path: '/audit' },
+    ]
+  },
+  {
+    label: 'LOGISTICS',
+    catPath: '/cat/logistics',
+    catIcon: Truck,
+    items: [
+      { label: 'Orders (OMS)',   icon: ShoppingCart,  path: '/oms' },
+      { label: 'Warehouse (WMS)',icon: Warehouse,     path: '/wms' },
+      { label: 'Fleet (FMS)',    icon: Truck,         path: '/fms' },
+      { label: 'Supply Chain',   icon: Network,       path: '/scm' },
+    ]
+  },
+  {
+    label: 'E-COMMERCE',
+    catPath: '/cat/ecommerce',
+    catIcon: ShoppingBag,
+    items: [
+      { label: 'Product Info (PIM)', icon: Tag,       path: '/pim' },
+      { label: 'Payments',           icon: CreditCard,path: '/payment-gateway' },
+    ]
+  },
+  {
+    label: 'EDUCATION',
+    catPath: '/cat/education',
+    catIcon: GraduationCap,
+    items: [
+      { label: 'Student Mgmt (SMS)',  icon: Users,        path: '/sms' },
+      { label: 'Exam Management',     icon: FileQuestion, path: '/exam-management' },
+      { label: 'Edu Management',      icon: Award,        path: '/edu-ems' },
     ]
   }
 ]
@@ -87,7 +120,20 @@ function NavGroup({ group, collapsed }) {
           onClick={() => setOpen(o => !o)}
           className="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider hover:text-slate-300 transition-colors"
         >
-          <span>{group.label}</span>
+          {group.catPath ? (
+            <NavLink
+              to={group.catPath}
+              onClick={e => e.stopPropagation()}
+              className={({ isActive }) =>
+                `flex items-center gap-1.5 hover:text-indigo-400 transition-colors ${isActive ? 'text-indigo-400' : ''}`
+              }
+            >
+              {group.catIcon && <group.catIcon size={11} />}
+              <span>{group.label}</span>
+            </NavLink>
+          ) : (
+            <span>{group.label}</span>
+          )}
           {open ? <ChevronDown size={12} /> : <ChevronRight size={12} />}
         </button>
       )}

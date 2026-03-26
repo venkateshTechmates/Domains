@@ -551,3 +551,199 @@ export const attendanceTrend = [
   { month:'Feb', rate:92 },
   { month:'Mar', rate:93 },
 ]
+
+// ─── PMS – Project Management ─────────────────────────────────────────────────
+export const projects = [
+  { id:'PR001', name:'CRM Implementation',  status:'In Progress', priority:'High',     manager:'Alice Morgan',  startDate:'2024-01-15', dueDate:'2024-06-30', budget:'$45,000',  progress:65, team:8  },
+  { id:'PR002', name:'Website Redesign',    status:'Planning',    priority:'Medium',   manager:'Bob Chen',      startDate:'2024-03-01', dueDate:'2024-07-15', budget:'$28,000',  progress:20, team:5  },
+  { id:'PR003', name:'Mobile App Launch',   status:'In Progress', priority:'High',     manager:'Eva Patel',     startDate:'2024-02-01', dueDate:'2024-05-31', budget:'$80,000',  progress:78, team:12 },
+  { id:'PR004', name:'Data Migration',      status:'On Hold',     priority:'Low',      manager:'Henry Brown',   startDate:'2024-04-01', dueDate:'2024-08-31', budget:'$15,000',  progress:10, team:3  },
+  { id:'PR005', name:'ERP Upgrade',         status:'Completed',   priority:'High',     manager:'Karen Singh',   startDate:'2023-10-01', dueDate:'2024-02-28', budget:'$120,000', progress:100,team:15 },
+  { id:'PR006', name:'Security Audit',      status:'In Progress', priority:'Critical', manager:'Daniel Lee',    startDate:'2024-03-10', dueDate:'2024-04-30', budget:'$25,000',  progress:45, team:4  },
+  { id:'PR007', name:'HR Portal',           status:'Planning',    priority:'Medium',   manager:'Alice Morgan',  startDate:'2024-04-15', dueDate:'2024-09-30', budget:'$35,000',  progress:5,  team:6  },
+  { id:'PR008', name:'Analytics Dashboard', status:'In Progress', priority:'High',     manager:'Grace Kim',     startDate:'2024-02-15', dueDate:'2024-05-15', budget:'$42,000',  progress:60, team:7  },
+  { id:'PR009', name:'API Integration',     status:'Completed',   priority:'Medium',   manager:'Eva Patel',     startDate:'2024-01-01', dueDate:'2024-02-28', budget:'$18,000',  progress:100,team:4  },
+  { id:'PR010', name:'Cloud Migration',     status:'In Progress', priority:'High',     manager:'Henry Brown',   startDate:'2024-03-01', dueDate:'2024-12-31', budget:'$200,000', progress:30, team:10 },
+]
+export const projectTasks = [
+  { id:'PT001', project:'CRM Implementation',  title:'Requirements gathering', assignee:'Alice Morgan',  priority:'High',     status:'Completed',   dueDate:'2024-01-31' },
+  { id:'PT002', project:'CRM Implementation',  title:'System design',          assignee:'Henry Brown',  priority:'High',     status:'In Progress', dueDate:'2024-02-28' },
+  { id:'PT003', project:'Mobile App Launch',   title:'UI wireframes',          assignee:'Grace Kim',    priority:'Medium',   status:'Completed',   dueDate:'2024-02-15' },
+  { id:'PT004', project:'Mobile App Launch',   title:'Backend API',            assignee:'Henry Brown',  priority:'High',     status:'In Progress', dueDate:'2024-04-30' },
+  { id:'PT005', project:'Security Audit',      title:'Vulnerability scan',     assignee:'Daniel Lee',   priority:'Critical', status:'In Progress', dueDate:'2024-04-10' },
+  { id:'PT006', project:'Website Redesign',    title:'Design mockups',         assignee:'Grace Kim',    priority:'Medium',   status:'Planned',     dueDate:'2024-04-15' },
+  { id:'PT007', project:'Cloud Migration',     title:'Infrastructure assess',  assignee:'Eva Patel',    priority:'High',     status:'Completed',   dueDate:'2024-03-31' },
+  { id:'PT008', project:'Analytics Dashboard', title:'Data pipeline setup',    assignee:'Henry Brown',  priority:'High',     status:'In Progress', dueDate:'2024-04-30' },
+]
+
+// ─── TMS – Ticket / Task Management ──────────────────────────────────────────
+export const tickets = [
+  { id:'TK001', title:'Login error on Safari',          type:'Bug',           priority:'High',     status:'Open',        assignee:'Henry Brown',  reporter:'Frank Torres', created:'2024-03-10', category:'Frontend'    },
+  { id:'TK002', title:'Add bulk CSV export',            type:'Feature',       priority:'Medium',   status:'In Progress', assignee:'Alice Morgan',  reporter:'Bob Chen',     created:'2024-03-08', category:'Backend'     },
+  { id:'TK003', title:'Dashboard loads slowly',         type:'Performance',   priority:'High',     status:'In Progress', assignee:'Eva Patel',     reporter:'Karen Singh',  created:'2024-03-09', category:'Performance' },
+  { id:'TK004', title:'Update user manual',             type:'Documentation', priority:'Low',      status:'Open',        assignee:'Jack Owens',    reporter:'Daniel Lee',   created:'2024-03-11', category:'Docs'        },
+  { id:'TK005', title:'Payment gateway timeout',        type:'Bug',           priority:'Critical', status:'Open',        assignee:'Henry Brown',  reporter:'Leo Nguyen',   created:'2024-03-12', category:'Payments'    },
+  { id:'TK006', title:'Add dark mode',                  type:'Feature',       priority:'Low',      status:'Planned',     assignee:'Grace Kim',     reporter:'Jack Owens',   created:'2024-03-05', category:'UI/UX'       },
+  { id:'TK007', title:'Email notifications broken',     type:'Bug',           priority:'High',     status:'Resolved',    assignee:'Eva Patel',     reporter:'Alice Morgan', created:'2024-03-01', category:'Notifications'},
+  { id:'TK008', title:'Add 2FA support',                type:'Feature',       priority:'High',     status:'In Progress', assignee:'Henry Brown',  reporter:'Karen Singh',  created:'2024-03-03', category:'Security'    },
+  { id:'TK009', title:'Report generation timeout',      type:'Bug',           priority:'Medium',   status:'Open',        assignee:'Alice Morgan',  reporter:'Carla Davis',  created:'2024-03-13', category:'Reports'     },
+  { id:'TK010', title:'Mobile layout fix',              type:'Bug',           priority:'Medium',   status:'In Progress', assignee:'Grace Kim',     reporter:'Bob Chen',     created:'2024-03-07', category:'Frontend'    },
+  { id:'TK011', title:'SSO integration with Azure AD',  type:'Feature',       priority:'High',     status:'Planned',     assignee:'Eva Patel',     reporter:'Daniel Lee',   created:'2024-03-14', category:'Security'    },
+  { id:'TK012', title:'Incorrect tax calculation',      type:'Bug',           priority:'Critical', status:'Resolved',    assignee:'Carla Davis',   reporter:'Karen Singh',  created:'2024-03-02', category:'Finance'     },
+]
+
+// ─── EMS – Employee Engagement / Management ───────────────────────────────────
+export const engagements = [
+  { id:'ENG001', employee:'Alice Morgan',    department:'Engineering', type:'Recognition',      score:92, date:'2024-03-01', feedback:'Outstanding leadership on CRM project',      status:'Active',  by:'Manager' },
+  { id:'ENG002', employee:'Bob Chen',        department:'Marketing',   type:'Training',         score:78, date:'2024-03-05', feedback:'Completed digital marketing certification',  status:'Active',  by:'HR'      },
+  { id:'ENG003', employee:'Carla Davis',     department:'Finance',     type:'Performance Rev',  score:88, date:'2024-03-07', feedback:'Excellent financial analysis skills',         status:'Active',  by:'Manager' },
+  { id:'ENG004', employee:'Daniel Lee',      department:'HR',          type:'Survey',           score:72, date:'2024-03-08', feedback:'Work-life balance improvement needed',        status:'Flagged', by:'HR'      },
+  { id:'ENG005', employee:'Eva Patel',       department:'Engineering', type:'Recognition',      score:95, date:'2024-03-10', feedback:'Best DevOps practices implemented',          status:'Active',  by:'Manager' },
+  { id:'ENG006', employee:'Frank Torres',    department:'Sales',       type:'Performance Rev',  score:68, date:'2024-03-11', feedback:'Sales targets below expectation',            status:'Flagged', by:'Manager' },
+  { id:'ENG007', employee:'Grace Kim',       department:'Design',      type:'Training',         score:85, date:'2024-03-12', feedback:'UX certification completed',                 status:'Active',  by:'HR'      },
+  { id:'ENG008', employee:'Henry Brown',     department:'Engineering', type:'Survey',           score:90, date:'2024-03-13', feedback:'Highly engaged, prefers remote work',        status:'Active',  by:'HR'      },
+  { id:'ENG009', employee:'Irene Walsh',     department:'Operations',  type:'Recognition',      score:82, date:'2024-03-14', feedback:'Process optimisation initiative',            status:'Active',  by:'Manager' },
+  { id:'ENG010', employee:'Jack Owens',      department:'Marketing',   type:'Performance Rev',  score:75, date:'2024-03-14', feedback:'Good content quality, needs consistency',    status:'Active',  by:'Manager' },
+]
+
+// ─── AMS – Asset Management ───────────────────────────────────────────────────
+export const assets = [
+  { id:'AST001', name:'Dell Laptop XPS 15',        type:'Hardware', location:'HQ Floor 3',    assignedTo:'Alice Morgan', purchaseDate:'2022-06-01', value:'$1,800',    status:'In Use',     warranty:'2025-06-01' },
+  { id:'AST002', name:'Cisco Network Switch',      type:'Network',  location:'Server Room',   assignedTo:'IT Team',      purchaseDate:'2021-03-15', value:'$3,200',    status:'In Use',     warranty:'2024-03-15' },
+  { id:'AST003', name:'MacBook Pro M2',            type:'Hardware', location:'HQ Floor 2',    assignedTo:'Grace Kim',    purchaseDate:'2023-01-20', value:'$2,400',    status:'In Use',     warranty:'2026-01-20' },
+  { id:'AST004', name:'HP LaserJet Pro',           type:'Printer',  location:'HQ Floor 1',    assignedTo:'Office Pool',  purchaseDate:'2020-09-05', value:'$650',      status:'Maintenance',warranty:'2023-09-05' },
+  { id:'AST005', name:'iPhone 14 Pro',             type:'Mobile',   location:'Sales Office',  assignedTo:'Frank Torres', purchaseDate:'2023-04-10', value:'$1,100',    status:'In Use',     warranty:'2025-04-10' },
+  { id:'AST006', name:'AWS EC2 Reserved',          type:'Cloud',    location:'AWS us-east-1', assignedTo:'Dev Team',     purchaseDate:'2024-01-01', value:'$12,000/yr',status:'Active',     warranty:'N/A'        },
+  { id:'AST007', name:'Herman Miller Chair',       type:'Furniture',location:'HQ Floor 2',    assignedTo:'Henry Brown',  purchaseDate:'2022-11-15', value:'$1,200',    status:'In Use',     warranty:'2027-11-15' },
+  { id:'AST008', name:'Sony 4K Monitor',           type:'Hardware', location:'HQ Floor 3',    assignedTo:'Eva Patel',    purchaseDate:'2023-07-22', value:'$800',      status:'In Use',     warranty:'2026-07-22' },
+  { id:'AST009', name:'UPS Battery Backup',        type:'Network',  location:'Server Room',   assignedTo:'IT Team',      purchaseDate:'2021-05-10', value:'$2,500',    status:'In Use',     warranty:'2024-05-10' },
+  { id:'AST010', name:'iPad Air',                  type:'Mobile',   location:'Field Team',    assignedTo:'Irene Walsh',  purchaseDate:'2023-09-01', value:'$750',      status:'In Use',     warranty:'2026-09-01' },
+  { id:'AST011', name:'NAS Storage Server',        type:'Network',  location:'Server Room',   assignedTo:'IT Team',      purchaseDate:'2022-02-28', value:'$4,500',    status:'In Use',     warranty:'2025-02-28' },
+  { id:'AST012', name:'Conference Room Display',   type:'Hardware', location:'Meeting Room A', assignedTo:'Office Pool', purchaseDate:'2023-03-15', value:'$1,900',    status:'In Use',     warranty:'2026-03-15' },
+]
+
+// ─── BFSI – Banking, Financial Services & Insurance ───────────────────────────
+export const bankAccounts = [
+  { id:'BA001', accountNo:'****1234', holder:'James Wilson',          type:'Savings',     balance:'$24,500',    bank:'City National', branch:'Downtown',       status:'Active',  openDate:'2020-01-15' },
+  { id:'BA002', accountNo:'****5678', holder:'Priya Sharma Trading',  type:'Current',     balance:'$186,000',   bank:'Chase',         branch:'Business Ctr',   status:'Active',  openDate:'2019-06-20' },
+  { id:'BA003', accountNo:'****9012', holder:'Carlos Rivera',         type:'Fixed Deposit',balance:'$50,000',   bank:'Wells Fargo',   branch:'Westside',       status:'Active',  openDate:'2023-03-01' },
+  { id:'BA004', accountNo:'****3456', holder:'Linda Johnson',         type:'Savings',     balance:'$8,200',     bank:'BofA',          branch:'Northside',      status:'Frozen',  openDate:'2018-09-14' },
+  { id:'BA005', accountNo:'****7890', holder:'Ahmed Hassan Corp',     type:'Current',     balance:'$342,000',   bank:'Citibank',      branch:'Main Street',    status:'Active',  openDate:'2021-04-05' },
+  { id:'BA006', accountNo:'****2345', holder:'Sophie Turner',         type:'Savings',     balance:'$15,600',    bank:'TD Bank',       branch:'Online',         status:'Active',  openDate:'2022-07-18' },
+  { id:'BA007', accountNo:'****6789', holder:'Global Tech Inc',       type:'Corporate',   balance:'$1,240,000', bank:'JPMorgan',      branch:'HQ Branch',      status:'Active',  openDate:'2017-02-10' },
+  { id:'BA008', accountNo:'****0123', holder:'David Park',            type:'Money Market',balance:'$62,000',    bank:'HSBC',          branch:'Midtown',        status:'Active',  openDate:'2020-11-25' },
+]
+export const insurancePolicies = [
+  { id:'IP001', policyNo:'POL-2024-001', holder:'James Wilson',    type:'Health Insurance',   premium:'$380/mo', coverage:'$500,000',   startDate:'2024-01-01', endDate:'2024-12-31', status:'Active'   },
+  { id:'IP002', policyNo:'POL-2024-002', holder:'Priya Sharma',    type:'Life Insurance',     premium:'$150/mo', coverage:'$1,000,000', startDate:'2023-06-01', endDate:'2033-06-01', status:'Active'   },
+  { id:'IP003', policyNo:'POL-2024-003', holder:'Carlos Rivera',   type:'Property Insurance', premium:'$220/mo', coverage:'$350,000',   startDate:'2024-02-01', endDate:'2025-02-01', status:'Active'   },
+  { id:'IP004', policyNo:'POL-2023-004', holder:'Linda Johnson',   type:'Auto Insurance',     premium:'$95/mo',  coverage:'$50,000',    startDate:'2023-09-01', endDate:'2024-09-01', status:'Expiring' },
+  { id:'IP005', policyNo:'POL-2024-005', holder:'Ahmed Hassan',    type:'Business Insurance', premium:'$560/mo', coverage:'$2,000,000', startDate:'2024-01-15', endDate:'2025-01-15', status:'Active'   },
+  { id:'IP006', policyNo:'POL-2023-006', holder:'Sophie Turner',   type:'Health Insurance',   premium:'$280/mo', coverage:'$300,000',   startDate:'2023-03-01', endDate:'2024-03-01', status:'Expired'  },
+]
+
+// ─── BMS – Budget Management ──────────────────────────────────────────────────
+export const budgets = [
+  { id:'BUD001', department:'Engineering', allocated:'$480,000', spent:'$312,000', remaining:'$168,000', utilization:65,  period:'Q1-Q2 2024', status:'On Track',    owner:'Alice Morgan' },
+  { id:'BUD002', department:'Marketing',   allocated:'$220,000', spent:'$198,000', remaining:'$22,000',  utilization:90,  period:'Q1-Q2 2024', status:'Warning',     owner:'Bob Chen'     },
+  { id:'BUD003', department:'HR',          allocated:'$150,000', spent:'$88,000',  remaining:'$62,000',  utilization:59,  period:'Q1-Q2 2024', status:'On Track',    owner:'Daniel Lee'   },
+  { id:'BUD004', department:'Operations',  allocated:'$380,000', spent:'$410,000', remaining:'-$30,000', utilization:108, period:'Q1-Q2 2024', status:'Over Budget', owner:'Irene Walsh'  },
+  { id:'BUD005', department:'Sales',       allocated:'$250,000', spent:'$175,000', remaining:'$75,000',  utilization:70,  period:'Q1-Q2 2024', status:'On Track',    owner:'Leo Nguyen'   },
+  { id:'BUD006', department:'IT',          allocated:'$320,000', spent:'$290,000', remaining:'$30,000',  utilization:91,  period:'Q1-Q2 2024', status:'Warning',     owner:'Eva Patel'    },
+  { id:'BUD007', department:'Finance',     allocated:'$180,000', spent:'$120,000', remaining:'$60,000',  utilization:67,  period:'Q1-Q2 2024', status:'On Track',    owner:'Karen Singh'  },
+  { id:'BUD008', department:'Design',      allocated:'$120,000', spent:'$88,000',  remaining:'$32,000',  utilization:73,  period:'Q1-Q2 2024', status:'On Track',    owner:'Grace Kim'    },
+]
+export const budgetExpenses = [
+  { id:'EXP001', department:'Engineering', description:'Cloud infrastructure upgrade',  amount:'$45,000', date:'2024-03-01', category:'Infrastructure', approvedBy:'Karen Singh' },
+  { id:'EXP002', department:'Marketing',   description:'Digital ad campaign Q1',        amount:'$55,000', date:'2024-01-15', category:'Advertising',    approvedBy:'Bob Chen'    },
+  { id:'EXP003', department:'Operations',  description:'Equipment purchase',            amount:'$28,000', date:'2024-02-20', category:'Equipment',      approvedBy:'Irene Walsh' },
+  { id:'EXP004', department:'IT',          description:'Software licenses renewal',     amount:'$32,000', date:'2024-03-05', category:'Software',       approvedBy:'Eva Patel'   },
+  { id:'EXP005', department:'Engineering', description:'Developer training bootcamp',   amount:'$12,000', date:'2024-03-10', category:'Training',       approvedBy:'Alice Morgan'},
+  { id:'EXP006', department:'Marketing',   description:'Trade show presence',           amount:'$38,000', date:'2024-02-28', category:'Events',         approvedBy:'Bob Chen'    },
+  { id:'EXP007', department:'Sales',       description:'Sales tools subscription',       amount:'$8,400',  date:'2024-03-12', category:'Software',       approvedBy:'Leo Nguyen'  },
+  { id:'EXP008', department:'HR',          description:'Employee benefits upgrade',     amount:'$24,000', date:'2024-03-08', category:'Benefits',       approvedBy:'Daniel Lee'  },
+]
+
+// ─── LMS Finance – Loan Management ───────────────────────────────────────────
+export const loans = [
+  { id:'LN001', borrower:'James Wilson',         type:'Personal Loan', amount:'$25,000',  rate:'8.5%',  term:'36 mo',  startDate:'2023-06-01', balance:'$18,400', status:'Active', nextPayment:'2024-04-01' },
+  { id:'LN002', borrower:'Priya Sharma Trading', type:'Business Loan', amount:'$150,000', rate:'6.25%', term:'60 mo',  startDate:'2022-03-15', balance:'$98,500', status:'Active', nextPayment:'2024-04-15' },
+  { id:'LN003', borrower:'Carlos Rivera',        type:'Mortgage',      amount:'$320,000', rate:'5.8%',  term:'360 mo', startDate:'2020-09-01', balance:'$298,000',status:'Active', nextPayment:'2024-04-01' },
+  { id:'LN004', borrower:'Linda Johnson',        type:'Auto Loan',     amount:'$32,000',  rate:'7.2%',  term:'48 mo',  startDate:'2022-07-01', balance:'$22,400', status:'Active', nextPayment:'2024-04-01' },
+  { id:'LN005', borrower:'Ahmed Hassan Corp',    type:'Business Loan', amount:'$500,000', rate:'5.5%',  term:'84 mo',  startDate:'2021-01-01', balance:'$380,000',status:'Active', nextPayment:'2024-04-01' },
+  { id:'LN006', borrower:'Sophie Turner',        type:'Personal Loan', amount:'$10,000',  rate:'9.0%',  term:'24 mo',  startDate:'2023-01-01', balance:'$5,200',  status:'Active', nextPayment:'2024-04-01' },
+  { id:'LN007', borrower:'David Park',           type:'Home Equity',   amount:'$75,000',  rate:'6.75%', term:'120 mo', startDate:'2019-06-15', balance:'$52,000', status:'Active', nextPayment:'2024-04-15' },
+  { id:'LN008', borrower:'Fatima Al-Rashid',     type:'Education Loan',amount:'$40,000',  rate:'4.5%',  term:'120 mo', startDate:'2018-09-01', balance:'$28,500', status:'Active', nextPayment:'2024-04-01' },
+  { id:'LN009', borrower:'Tom Bradley',          type:'Personal Loan', amount:'$15,000',  rate:'8.0%',  term:'36 mo',  startDate:'2021-03-01', balance:'$0',      status:'Closed', nextPayment:'-'          },
+  { id:'LN010', borrower:'Maria Garcia',         type:'Business Loan', amount:'$80,000',  rate:'7.5%',  term:'60 mo',  startDate:'2023-08-01', balance:'$72,000', status:'Active', nextPayment:'2024-04-01' },
+]
+
+// ─── LOS – Loan Origination ───────────────────────────────────────────────────
+export const loanApplications = [
+  { id:'APP001', applicant:'Robert Kim',        type:'Personal Loan', amount:'$20,000',  income:'$65,000',    creditScore:720, submitted:'2024-03-10', status:'Under Review',         officer:'Sarah Chen'   },
+  { id:'APP002', applicant:'Jennifer Liu',      type:'Mortgage',      amount:'$280,000', income:'$120,000',   creditScore:785, submitted:'2024-03-08', status:'Approved',             officer:'Michael Ross' },
+  { id:'APP003', applicant:'NextGen Startup',   type:'Business Loan', amount:'$100,000', income:'$480,000',   creditScore:680, submitted:'2024-03-11', status:'Additional Docs Reqd', officer:'Sarah Chen'   },
+  { id:'APP004', applicant:'Kevin Walsh',       type:'Auto Loan',     amount:'$28,000',  income:'$58,000',    creditScore:695, submitted:'2024-03-12', status:'Under Review',         officer:'Michael Ross' },
+  { id:'APP005', applicant:'Aisha Patel',       type:'Education Loan',amount:'$45,000',  income:'$0',         creditScore:650, submitted:'2024-03-07', status:'Pending Documents',    officer:'Lisa Park'    },
+  { id:'APP006', applicant:'TechBridge Corp',   type:'Business Loan', amount:'$250,000', income:'$1,200,000', creditScore:760, submitted:'2024-03-05', status:'Approved',             officer:'Lisa Park'    },
+  { id:'APP007', applicant:'Marcus Johnson',    type:'Personal Loan', amount:'$12,000',  income:'$42,000',    creditScore:610, submitted:'2024-03-13', status:'Rejected',             officer:'Sarah Chen'   },
+  { id:'APP008', applicant:'Diana Chen',        type:'Mortgage',      amount:'$350,000', income:'$145,000',   creditScore:810, submitted:'2024-03-09', status:'Approved',             officer:'Michael Ross' },
+  { id:'APP009', applicant:'Urban Eats LLC',    type:'Business Loan', amount:'$75,000',  income:'$320,000',   creditScore:710, submitted:'2024-03-14', status:'Under Review',         officer:'Lisa Park'    },
+  { id:'APP010', applicant:'Nathan Brown',      type:'Home Equity',   amount:'$60,000',  income:'$88,000',    creditScore:740, submitted:'2024-03-06', status:'Approved',             officer:'Michael Ross' },
+]
+
+// ─── PMS Finance – Portfolio Management ──────────────────────────────────────
+export const portfolios = [
+  { id:'PF001', name:'Growth Portfolio',     manager:'Karen Singh', value:'$2,450,000', returnPct:'+12.4%', risk:'Moderate', assets:24, status:'Active',       lastRebalance:'2024-02-01' },
+  { id:'PF002', name:'Conservative Income', manager:'Carla Davis', value:'$1,800,000', returnPct:'+5.8%',  risk:'Low',      assets:18, status:'Active',       lastRebalance:'2024-01-15' },
+  { id:'PF003', name:'Tech Innovation',     manager:'Karen Singh', value:'$3,200,000', returnPct:'+18.6%', risk:'High',     assets:32, status:'Active',       lastRebalance:'2024-02-15' },
+  { id:'PF004', name:'Real Estate Mix',     manager:'Carla Davis', value:'$950,000',   returnPct:'+7.2%',  risk:'Moderate', assets:12, status:'Active',       lastRebalance:'2024-01-20' },
+  { id:'PF005', name:'Global Diversified',  manager:'Karen Singh', value:'$5,100,000', returnPct:'+9.8%',  risk:'Moderate', assets:45, status:'Active',       lastRebalance:'2024-03-01' },
+  { id:'PF006', name:'ESG Portfolio',       manager:'Carla Davis', value:'$1,200,000', returnPct:'+8.5%',  risk:'Moderate', assets:20, status:'Active',       lastRebalance:'2024-02-20' },
+  { id:'PF007', name:'Fixed Income',        manager:'Karen Singh', value:'$2,800,000', returnPct:'+4.2%',  risk:'Low',      assets:15, status:'Active',       lastRebalance:'2024-01-10' },
+  { id:'PF008', name:'Emerging Markets',    manager:'Carla Davis', value:'$680,000',   returnPct:'-2.3%',  risk:'High',     assets:28, status:'Under Review', lastRebalance:'2024-03-10' },
+]
+export const holdings = [
+  { id:'H001', portfolio:'Growth Portfolio',    asset:'Apple Inc (AAPL)',    type:'Equity', quantity:500,  avgPrice:'$172.50', currentPrice:'$189.30', value:'$94,650',  gain:'+9.7%'   },
+  { id:'H002', portfolio:'Growth Portfolio',    asset:'US 10Y Treasury',     type:'Bond',   quantity:50,   avgPrice:'$98.20',  currentPrice:'$97.80',  value:'$48,900',  gain:'-0.4%'   },
+  { id:'H003', portfolio:'Tech Innovation',     asset:'NVIDIA Corp (NVDA)',  type:'Equity', quantity:200,  avgPrice:'$420.00', currentPrice:'$875.00', value:'$175,000', gain:'+108.3%' },
+  { id:'H004', portfolio:'Conservative Income', asset:'Vanguard Bond ETF',   type:'ETF',    quantity:1000, avgPrice:'$72.00',  currentPrice:'$74.50',  value:'$74,500',  gain:'+3.5%'   },
+  { id:'H005', portfolio:'Global Diversified',  asset:'S&P 500 ETF',         type:'ETF',    quantity:800,  avgPrice:'$420.00', currentPrice:'$498.00', value:'$398,400', gain:'+18.6%'  },
+  { id:'H006', portfolio:'Growth Portfolio',    asset:'Microsoft (MSFT)',    type:'Equity', quantity:300,  avgPrice:'$380.00', currentPrice:'$418.00', value:'$125,400', gain:'+10.0%'  },
+  { id:'H007', portfolio:'ESG Portfolio',       asset:'BlackRock ESG ETF',   type:'ETF',    quantity:600,  avgPrice:'$55.00',  currentPrice:'$60.20',  value:'$36,120',  gain:'+9.5%'   },
+  { id:'H008', portfolio:'Real Estate Mix',     asset:'Vanguard REIT',       type:'REIT',   quantity:400,  avgPrice:'$48.00',  currentPrice:'$51.50',  value:'$20,600',  gain:'+7.3%'   },
+]
+
+// ─── EHR – Electronic Health Records ─────────────────────────────────────────
+export const ehrRecords = [
+  { id:'EHR001', patient:'James Wilson',     dob:'1972-04-15', bloodType:'O+',  allergies:'Penicillin',   conditions:'Hypertension, CAD',         medications:'Lisinopril, Atorvastatin', lastVisit:'2024-03-14', primaryCare:'Dr. Sarah Lee',  insurance:'BlueCross' },
+  { id:'EHR002', patient:'Priya Sharma',     dob:'1990-08-22', bloodType:'A+',  allergies:'None',         conditions:'Migraine',                  medications:'Sumatriptan PRN',          lastVisit:'2024-03-12', primaryCare:'Dr. Raj Patel',  insurance:'Aetna'     },
+  { id:'EHR003', patient:'Carlos Rivera',    dob:'1957-11-03', bloodType:'B-',  allergies:'Sulfa',        conditions:'T2 Diabetes, Fracture',     medications:'Metformin, Calcium',       lastVisit:'2024-03-11', primaryCare:'Dr. Amy Chen',   insurance:'Medicare'  },
+  { id:'EHR004', patient:'Linda Johnson',    dob:'1979-02-28', bloodType:'AB+', allergies:'Latex, NSAIDs',conditions:'Septicemia – recovering',   medications:'IV Antibiotics',           lastVisit:'2024-03-13', primaryCare:'Dr. Mark Davis', insurance:'UnitedHealth'},
+  { id:'EHR005', patient:'Ahmed Hassan',     dob:'1995-07-10', bloodType:'O-',  allergies:'None',         conditions:'Post-appendectomy',         medications:'Amoxicillin 500mg',        lastVisit:'2024-03-08', primaryCare:'Dr. Sarah Lee',  insurance:'Cigna'     },
+  { id:'EHR006', patient:'Sophie Turner',    dob:'1986-12-05', bloodType:'A-',  allergies:'Aspirin',      conditions:'Pregnancy – 28 weeks',      medications:'Prenatal vitamins',        lastVisit:'2024-03-10', primaryCare:'Dr. Priya Nair', insurance:'BlueCross' },
+  { id:'EHR007', patient:'David Park',       dob:'1964-06-18', bloodType:'B+',  allergies:'Ibuprofen',    conditions:'T2 Diabetes',               medications:'Insulin, Metformin',       lastVisit:'2024-03-09', primaryCare:'Dr. Raj Patel',  insurance:'Medicare'  },
+  { id:'EHR008', patient:'Fatima Al-Rashid', dob:'1983-03-22', bloodType:'O+',  allergies:'None',         conditions:'Epilepsy',                  medications:'Levetiracetam 500mg',      lastVisit:'2024-03-07', primaryCare:'Dr. Mark Davis', insurance:'Aetna'     },
+]
+export const prescriptions = [
+  { id:'RX001', patient:'James Wilson',     medication:'Lisinopril 10mg',      prescribedBy:'Dr. Sarah Lee',  date:'2024-03-14', duration:'90 days', refills:3, status:'Active',    pharmacy:'City Pharmacy' },
+  { id:'RX002', patient:'Carlos Rivera',    medication:'Metformin 500mg',      prescribedBy:'Dr. Amy Chen',   date:'2024-03-11', duration:'30 days', refills:5, status:'Active',    pharmacy:'Walgreens'     },
+  { id:'RX003', patient:'Priya Sharma',     medication:'Sumatriptan 50mg',     prescribedBy:'Dr. Raj Patel',  date:'2024-03-12', duration:'PRN',     refills:2, status:'Active',    pharmacy:'CVS'           },
+  { id:'RX004', patient:'Sophie Turner',    medication:'Prenatal Vitamins',    prescribedBy:'Dr. Priya Nair', date:'2024-03-10', duration:'Ongoing', refills:6, status:'Active',    pharmacy:'City Pharmacy' },
+  { id:'RX005', patient:'Ahmed Hassan',     medication:'Amoxicillin 500mg',    prescribedBy:'Dr. Sarah Lee',  date:'2024-03-08', duration:'7 days',  refills:0, status:'Completed', pharmacy:'Walgreens'     },
+  { id:'RX006', patient:'Fatima Al-Rashid', medication:'Levetiracetam 500mg',  prescribedBy:'Dr. Mark Davis', date:'2024-03-07', duration:'Chronic', refills:12,status:'Active',    pharmacy:'CVS'           },
+  { id:'RX007', patient:'David Park',       medication:'Insulin Glargine',     prescribedBy:'Dr. Raj Patel',  date:'2024-03-09', duration:'Ongoing', refills:6, status:'Active',    pharmacy:'City Pharmacy' },
+  { id:'RX008', patient:'Linda Johnson',    medication:'IV Vancomycin',        prescribedBy:'Dr. Mark Davis', date:'2024-03-13', duration:'14 days', refills:0, status:'Active',    pharmacy:'Hospital'      },
+]
+
+// ─── RIS – Radiology Information System ──────────────────────────────────────
+export const risOrders = [
+  { id:'RIS001', patient:'James Wilson',     exam:'Chest X-Ray',   physician:'Dr. Sarah Lee',  priority:'Routine',  status:'Completed', orderedDate:'2024-03-10', completedDate:'2024-03-11', notes:'Cardiac eval'    },
+  { id:'RIS002', patient:'Linda Johnson',    exam:'CT Abdomen',    physician:'Dr. Mark Davis', priority:'Urgent',   status:'In Progress',orderedDate:'2024-03-13', completedDate:'-',          notes:'Sepsis workup'   },
+  { id:'RIS003', patient:'Carlos Rivera',    exam:'X-Ray R Femur', physician:'Dr. Amy Chen',   priority:'Routine',  status:'Completed', orderedDate:'2024-03-05', completedDate:'2024-03-06', notes:'Fracture check'  },
+  { id:'RIS004', patient:'Fatima Al-Rashid', exam:'Brain MRI',     physician:'Dr. Mark Davis', priority:'Urgent',   status:'Scheduled', orderedDate:'2024-03-14', completedDate:'-',          notes:'Seizure review'  },
+  { id:'RIS005', patient:'Maria Garcia',     exam:'Lung CT',       physician:'Dr. John Smith', priority:'Routine',  status:'Scheduled', orderedDate:'2024-03-12', completedDate:'-',          notes:'Asthma assess'   },
+  { id:'RIS006', patient:'David Park',       exam:'Abdo Ultrasound',physician:'Dr. Raj Patel', priority:'Elective', status:'Completed', orderedDate:'2024-03-08', completedDate:'2024-03-09', notes:'Routine check'   },
+  { id:'RIS007', patient:'Tom Bradley',      exam:'Echo Cardiogram',physician:'Dr. Sarah Lee', priority:'Routine',  status:'Completed', orderedDate:'2024-03-11', completedDate:'2024-03-12', notes:'Heart eval'      },
+  { id:'RIS008', patient:'Sophie Turner',    exam:'Pelvic Ultrasound',physician:'Dr. Priya Nair',priority:'Routine',status:'Completed', orderedDate:'2024-03-10', completedDate:'2024-03-10', notes:'28-week scan'    },
+]

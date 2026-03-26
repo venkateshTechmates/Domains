@@ -1,5 +1,7 @@
 # Domains
 
+🔗 **Live Dashboard:** [https://venkateshTechmates.github.io/Domains/](https://venkateshTechmates.github.io/Domains/)
+
 These are commonly used software system types (domains) you'll see in companies and projects — especially useful for interviews.
 
 ## Most Common System Types (Domains)

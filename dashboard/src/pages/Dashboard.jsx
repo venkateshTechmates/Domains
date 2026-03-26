@@ -1,227 +1,124 @@
-import { Link } from 'react-router-dom';
-import { BarChart, Bar, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+﻿import { Link } from 'react-router-dom';
 import {
-  LayoutDashboard, Building2, Users, Handshake, Package, ShoppingCart,
-  Warehouse, Truck, Banknote, Heart, ShoppingBag, GraduationCap, Shield,
-  Key, GitBranch, Bell, ClipboardList, FileText, Activity, TrendingUp,
-  Database, Server, Globe
+  Building2, DollarSign, Heart, Shield, Truck, ShoppingBag, GraduationCap,
+  ChevronRight, Activity, TrendingUp, Users, Globe, LayoutGrid
 } from 'lucide-react';
-import { monthlyRevenue, deptHeadcount, orderStatus, attendanceTrend } from '../data/mockData';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { monthlyRevenue, orderStatus } from '../data/mockData';
 
 const COLORS = ['#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
 
-const modules = [
-  {
-    category: 'Business Systems',
-    color: 'from-indigo-500 to-blue-600',
-    items: [
-      { name: 'HMS', subtitle: 'Hospital Management', icon: Building2,    path: '/hms',       stats: [{ label: 'Patients', val: '10' }, { label: 'Doctors', val: '8' }],    border: 'border-blue-400' },
-      { name: 'HRMS', subtitle: 'Human Resources',    icon: Users,         path: '/hrms',      stats: [{ label: 'Employees', val: '84' }, { label: 'On Leave', val: '1' }],  border: 'border-purple-400' },
-      { name: 'CRM', subtitle: 'Customer Relations',  icon: Handshake,     path: '/crm',       stats: [{ label: 'Leads', val: '10' }, { label: 'Open Deals', val: '6' }],   border: 'border-indigo-400' },
-      { name: 'ERP', subtitle: 'Enterprise Resource', icon: Database,      path: '/erp',       stats: [{ label: 'Departments', val: '6' }, { label: 'Revenue', val: '$241K' }],border: 'border-sky-400' },
-      { name: 'LMS', subtitle: 'Learning Management', icon: GraduationCap, path: '/lms',       stats: [{ label: 'Courses', val: '8' }, { label: 'Learners', val: '8' }],    border: 'border-green-400' },
-      { name: 'CMS', subtitle: 'Content Management',  icon: FileText,      path: '/cms',       stats: [{ label: 'Pages', val: '8' }, { label: 'Media Files', val: '6' }],   border: 'border-orange-400' },
-    ]
-  },
-  {
-    category: 'Operations',
-    color: 'from-amber-500 to-orange-600',
-    items: [
-      { name: 'IMS', subtitle: 'Inventory Management',icon: Package,       path: '/ims',       stats: [{ label: 'SKUs', val: '12' }, { label: 'Low Stock', val: '2' }],     border: 'border-amber-400' },
-      { name: 'OMS', subtitle: 'Order Management',    icon: ShoppingCart,  path: '/oms',       stats: [{ label: 'Orders', val: '10' }, { label: 'Pending', val: '3' }],     border: 'border-teal-400' },
-      { name: 'WMS', subtitle: 'Warehouse Management',icon: Warehouse,     path: '/wms',       stats: [{ label: 'Warehouses', val: '6' }, { label: 'Shipments', val: '8' }],border: 'border-cyan-400' },
-      { name: 'Logistics', subtitle: 'Supply Chain & Fleet',icon: Truck,   path: '/logistics', stats: [{ label: 'Routes', val: '6' }, { label: 'Fleet', val: '7' }],        border: 'border-orange-400' },
-    ]
-  },
-  {
-    category: 'Finance',
-    color: 'from-emerald-500 to-green-600',
-    items: [
-      { name: 'Finance', subtitle: 'Banking & Accounts', icon: Banknote, path: '/finance', stats: [{ label: 'Accounts', val: '6' }, { label: 'Invoices', val: '8' }], border: 'border-emerald-400' },
-    ]
-  },
-  {
-    category: 'Healthcare',
-    color: 'from-rose-500 to-red-600',
-    items: [
-      { name: 'Healthcare', subtitle: 'EMR · LIS · Radiology', icon: Heart, path: '/healthcare', stats: [{ label: 'EMR Records', val: '8' }, { label: 'Lab Tests', val: '8' }], border: 'border-rose-400' },
-    ]
-  },
-  {
-    category: 'E-Commerce',
-    color: 'from-pink-500 to-purple-600',
-    items: [
-      { name: 'E-Commerce', subtitle: 'PIM · Payments', icon: ShoppingBag, path: '/ecommerce', stats: [{ label: 'Products', val: '7' }, { label: 'Payments', val: '9' }], border: 'border-pink-400' },
-    ]
-  },
-  {
-    category: 'Education',
-    color: 'from-yellow-500 to-amber-600',
-    items: [
-      { name: 'Education', subtitle: 'Students · Exams · Courses', icon: GraduationCap, path: '/education', stats: [{ label: 'Students', val: '10' }, { label: 'Exams', val: '7' }], border: 'border-yellow-400' },
-    ]
-  },
-  {
-    category: 'IT & Security',
-    color: 'from-violet-500 to-indigo-600',
-    items: [
-      { name: 'IAM', subtitle: 'Identity & Access',    icon: Shield,        path: '/iam',          stats: [{ label: 'Users', val: '10' }, { label: 'Roles', val: '6' }],        border: 'border-violet-400' },
-      { name: 'SSO', subtitle: 'Single Sign-On',       icon: Key,           path: '/sso',          stats: [{ label: 'Apps', val: '8' }, { label: 'Sessions', val: '7' }],       border: 'border-indigo-400' },
-      { name: 'Workflow', subtitle: 'Process Automation',icon: GitBranch,   path: '/workflow',     stats: [{ label: 'Processes', val: '8' }, { label: 'Tasks', val: '10' }],     border: 'border-slate-400' },
-      { name: 'Notifications', subtitle: 'Alerts & Alerts',icon: Bell,      path: '/notifications',stats: [{ label: 'Templates', val: '9' }, { label: 'Sent Today', val: '8' }], border: 'border-yellow-400' },
-      { name: 'Audit Logs', subtitle: 'Security Audit',icon: ClipboardList, path: '/audit',        stats: [{ label: 'Events Today', val: '12' }, { label: 'Warnings', val: '3' }],border: 'border-gray-400' },
-    ]
-  },
+const categories = [
+  { name:'Business Systems',  description:'HMS Â· HRMS Â· CRM Â· ERP Â· LMS Â· CMS Â· IMS Â· PMS Â· TMS Â· EMS', icon:Building2,    path:'/cat/business',  color:'indigo',  modules:10, stats:[{label:'Modules',val:'10'},{label:'Employees',val:'84'}] },
+  { name:'Finance & Banking', description:'Accounts Â· Loans Â· Assets Â· Budgets Â· Portfolio Â· BFSI',      icon:DollarSign,   path:'/cat/finance',   color:'emerald', modules:7,  stats:[{label:'Modules',val:'7'},{label:'Active Loans',val:'9'}] },
+  { name:'Healthcare',        description:'EHR Â· EMR Â· Laboratory (LIS) Â· PACS Â· Radiology (RIS)',       icon:Heart,        path:'/cat/healthcare',color:'rose',    modules:5,  stats:[{label:'Modules',val:'5'},{label:'Patients',val:'10'}] },
+  { name:'IT & Security',     description:'IAM Â· SSO Â· Workflow Â· Notifications Â· Audit Logs',            icon:Shield,       path:'/cat/it',        color:'violet',  modules:5,  stats:[{label:'Modules',val:'5'},{label:'IAM Users',val:'10'}] },
+  { name:'Logistics',         description:'OMS Â· WMS Â· Fleet Management Â· Supply Chain',                  icon:Truck,        path:'/cat/logistics', color:'amber',   modules:4,  stats:[{label:'Modules',val:'4'},{label:'Fleet',val:'7'}] },
+  { name:'E-Commerce',        description:'Product Information Management Â· Payment Gateway',              icon:ShoppingBag,  path:'/cat/ecommerce', color:'pink',    modules:2,  stats:[{label:'Modules',val:'2'},{label:'Products',val:'7'}] },
+  { name:'Education',         description:'Student Management Â· Exam Management Â· EMS',                   icon:GraduationCap,path:'/cat/education', color:'yellow',  modules:3,  stats:[{label:'Modules',val:'3'},{label:'Students',val:'10'}] },
 ];
 
-function ModuleCard({ name, subtitle, icon: Icon, path, stats, border }) {
+const CS = {
+  indigo:  {border:'border-indigo-200',  hb:'hover:border-indigo-400',  bg:'bg-indigo-50',  ico:'text-indigo-600',  badge:'bg-indigo-50 text-indigo-700',  lnk:'text-indigo-600'},
+  emerald: {border:'border-emerald-200', hb:'hover:border-emerald-400', bg:'bg-emerald-50', ico:'text-emerald-600', badge:'bg-emerald-50 text-emerald-700', lnk:'text-emerald-600'},
+  rose:    {border:'border-rose-200',    hb:'hover:border-rose-400',    bg:'bg-rose-50',    ico:'text-rose-600',    badge:'bg-rose-50 text-rose-700',       lnk:'text-rose-600'},
+  violet:  {border:'border-violet-200',  hb:'hover:border-violet-400',  bg:'bg-violet-50',  ico:'text-violet-600',  badge:'bg-violet-50 text-violet-700',  lnk:'text-violet-600'},
+  amber:   {border:'border-amber-200',   hb:'hover:border-amber-400',   bg:'bg-amber-50',   ico:'text-amber-600',   badge:'bg-amber-50 text-amber-700',    lnk:'text-amber-600'},
+  pink:    {border:'border-pink-200',    hb:'hover:border-pink-400',    bg:'bg-pink-50',    ico:'text-pink-600',    badge:'bg-pink-50 text-pink-700',       lnk:'text-pink-600'},
+  yellow:  {border:'border-yellow-200',  hb:'hover:border-yellow-400',  bg:'bg-yellow-50',  ico:'text-yellow-700',  badge:'bg-yellow-50 text-yellow-700',  lnk:'text-yellow-700'},
+};
+
+function CategoryCard({ name, description, icon:Icon, path, color, modules, stats }) {
+  const c = CS[color];
   return (
-    <Link
-      to={path}
-      className={`bg-white rounded-xl p-4 border-l-4 ${border} hover:shadow-md transition-all duration-200 group`}
-    >
-      <div className="flex items-start justify-between mb-3">
-        <div>
-          <p className="font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">{name}</p>
-          <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>
-        </div>
-        <Icon className="w-5 h-5 text-gray-400 group-hover:text-indigo-500 transition-colors flex-shrink-0" />
+    <Link to={path} className={`group bg-white rounded-2xl p-6 border-2 ${c.border} ${c.hb} hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200`}>
+      <div className="flex items-start justify-between mb-4">
+        <div className={`p-3 rounded-xl ${c.bg}`}><Icon className={`w-7 h-7 ${c.ico}`} /></div>
+        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${c.badge}`}>{modules} modules</span>
       </div>
-      <div className="grid grid-cols-2 gap-2">
+      <h3 className="text-base font-bold text-gray-900 mb-1.5 group-hover:text-indigo-700 transition-colors">{name}</h3>
+      <p className="text-xs text-gray-500 mb-4 leading-relaxed">{description}</p>
+      <div className="grid grid-cols-2 gap-2 mb-4">
         {stats.map(s => (
-          <div key={s.label} className="bg-gray-50 rounded-lg p-2 text-center">
-            <p className="text-base font-bold text-gray-900">{s.val}</p>
+          <div key={s.label} className="bg-gray-50 rounded-lg p-2.5 text-center">
+            <p className="text-lg font-bold text-gray-800">{s.val}</p>
             <p className="text-xs text-gray-500">{s.label}</p>
           </div>
         ))}
+      </div>
+      <div className={`flex items-center gap-1 text-sm font-semibold ${c.lnk} group-hover:gap-2 transition-all`}>
+        Explore Modules <ChevronRight className="w-4 h-4" />
       </div>
     </Link>
   );
 }
 
 export default function Dashboard() {
+  const totalModules = categories.reduce((s, c) => s + c.modules, 0);
   return (
     <div className="p-6 space-y-8">
-      {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Platform Overview</h1>
           <p className="text-sm text-gray-500 mt-1">
-            {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+            {new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' })}
+            {' Â· '}{totalModules} modules across {categories.length} domains
           </p>
         </div>
-        <div className="flex items-center gap-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-xl text-sm font-medium">
-          <Activity className="w-4 h-4" />
-          All Systems Operational
+        <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-xl text-sm font-medium">
+          <Activity className="w-4 h-4" /> All Systems Operational
         </div>
       </div>
 
-      {/* Global KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: 'Total Modules', value: '20', sub: 'across 7 categories', icon: Globe, color: 'indigo' },
-          { label: 'Active Employees', value: '84', sub: '1 on leave', icon: Users, color: 'purple' },
-          { label: 'Monthly Revenue', value: '$241K', sub: '+12% vs last month', icon: TrendingUp, color: 'emerald' },
-          { label: 'Open Incidents', value: '3', sub: '2 warnings, 1 error', icon: Server, color: 'rose' },
-        ].map(k => {
-          const colors = {
-            indigo: { bg: 'bg-indigo-50', icon: 'text-indigo-600', value: 'text-indigo-700' },
-            purple: { bg: 'bg-purple-50', icon: 'text-purple-600', value: 'text-purple-700' },
-            emerald: { bg: 'bg-emerald-50', icon: 'text-emerald-600', value: 'text-emerald-700' },
-            rose: { bg: 'bg-rose-50', icon: 'text-rose-600', value: 'text-rose-700' },
-          };
-          const c = colors[k.color];
-          return (
-            <div key={k.label} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-              <div className={`inline-flex p-2 rounded-lg ${c.bg} mb-3`}>
-                <k.icon className={`w-5 h-5 ${c.icon}`} />
-              </div>
-              <p className={`text-2xl font-bold ${c.value}`}>{k.value}</p>
-              <p className="text-sm text-gray-700 font-medium">{k.label}</p>
-              <p className="text-xs text-gray-400 mt-0.5">{k.sub}</p>
-            </div>
-          );
-        })}
+          { label:'Domains',       value:categories.length, icon:Globe,      cls:'bg-indigo-50 text-indigo-600' },
+          { label:'Total Modules', value:totalModules,      icon:LayoutGrid, cls:'bg-purple-50 text-purple-600' },
+          { label:'Active Users',  value:'284',             icon:Users,      cls:'bg-emerald-50 text-emerald-600' },
+          { label:'Monthly Rev',   value:'$241K',           icon:TrendingUp, cls:'bg-rose-50 text-rose-600' },
+        ].map(k => (
+          <div key={k.label} className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+            <div className={`inline-flex p-2 rounded-lg ${k.cls} mb-3`}><k.icon className="w-5 h-5" /></div>
+            <p className="text-2xl font-bold text-gray-900">{k.value}</p>
+            <p className="text-sm text-gray-600 font-medium">{k.label}</p>
+          </div>
+        ))}
       </div>
 
-      {/* Charts row */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-          <p className="font-semibold text-gray-800 mb-4">Monthly Revenue Trend</p>
-          <ResponsiveContainer width="100%" height={200}>
+          <p className="font-semibold text-gray-800 mb-4">Monthly Revenue</p>
+          <ResponsiveContainer width="100%" height={180}>
             <LineChart data={monthlyRevenue}>
-              <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-              <YAxis tick={{ fontSize: 12 }} tickFormatter={v => `$${(v/1000).toFixed(0)}K`} />
-              <Tooltip formatter={v => [`$${(v/1000).toFixed(0)}K`, 'Revenue']} />
-              <Line type="monotone" dataKey="revenue" stroke="#6366f1" strokeWidth={2} dot={{ fill: '#6366f1', r: 4 }} />
+              <XAxis dataKey="month" tick={{ fontSize:12 }} />
+              <YAxis tick={{ fontSize:12 }} tickFormatter={v => '$' + (v/1000).toFixed(0) + 'K'} />
+              <Tooltip formatter={v => ['$' + (v/1000).toFixed(0) + 'K', 'Revenue']} />
+              <Line type="monotone" dataKey="revenue" stroke="#6366f1" strokeWidth={2} dot={{ fill:'#6366f1', r:4 }} />
             </LineChart>
           </ResponsiveContainer>
         </div>
         <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-          <p className="font-semibold text-gray-800 mb-4">Headcount by Dept</p>
-          <ResponsiveContainer width="100%" height={200}>
-            <BarChart data={deptHeadcount} layout="vertical">
-              <XAxis type="number" tick={{ fontSize: 11 }} />
-              <YAxis dataKey="dept" type="category" tick={{ fontSize: 11 }} width={45} />
+          <p className="font-semibold text-gray-800 mb-3">Order Distribution</p>
+          <ResponsiveContainer width="100%" height={180}>
+            <PieChart>
+              <Pie data={orderStatus} cx="50%" cy="50%" outerRadius={65} dataKey="value">
+                {orderStatus.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
+              </Pie>
               <Tooltip />
-              <Bar dataKey="count" fill="#6366f1" radius={[0, 4, 4, 0]} />
-            </BarChart>
+            </PieChart>
           </ResponsiveContainer>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-          <p className="font-semibold text-gray-800 mb-4">Order Status Distribution</p>
-          <div className="flex items-center gap-6">
-            <ResponsiveContainer width={160} height={160}>
-              <PieChart>
-                <Pie data={orderStatus} cx="50%" cy="50%" innerRadius={50} outerRadius={70} paddingAngle={3} dataKey="value">
-                  {orderStatus.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
-            <div className="space-y-2 flex-1">
-              {orderStatus.map((s, i) => (
-                <div key={s.name} className="flex items-center justify-between text-sm">
-                  <span className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: COLORS[i % COLORS.length] }} />
-                    {s.name}
-                  </span>
-                  <span className="font-semibold text-gray-700">{s.value}%</span>
-                </div>
-              ))}
-            </div>
-          </div>
+      <div>
+        <div className="flex items-center gap-2 mb-5">
+          <h2 className="text-xl font-bold text-gray-900">Domains</h2>
+          <span className="text-sm text-gray-400">â€” click to explore modules</span>
         </div>
-
-        <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-          <p className="font-semibold text-gray-800 mb-4">Attendance Rate (%)</p>
-          <ResponsiveContainer width="100%" height={160}>
-            <BarChart data={attendanceTrend}>
-              <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-              <YAxis domain={[80, 100]} tick={{ fontSize: 12 }} />
-              <Tooltip formatter={v => [`${v}%`, 'Attendance']} />
-              <Bar dataKey="rate" fill="#10b981" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {categories.map(cat => <CategoryCard key={cat.name} {...cat} />)}
         </div>
       </div>
-
-      {/* Module grid by category */}
-      {modules.map(group => (
-        <div key={group.category}>
-          <div className="flex items-center gap-3 mb-4">
-            <h2 className="text-lg font-bold text-gray-900">{group.category}</h2>
-            <div className={`h-0.5 flex-1 bg-gradient-to-r ${group.color} opacity-30 rounded`} />
-            <span className="text-xs text-gray-400">{group.items.length} module{group.items.length > 1 ? 's' : ''}</span>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {group.items.map(m => <ModuleCard key={m.name} {...m} />)}
-          </div>
-        </div>
-      ))}
     </div>
   );
 }

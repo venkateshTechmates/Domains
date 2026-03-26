@@ -1,62 +1,75 @@
-<p class="has-line-data" data-line-start="0" data-line-end="1">These are commonly used software system types (domains) you’ll see in companies and projects — especially useful for interviews.</p>
-<p class="has-line-data" data-line-start="2" data-line-end="52">Most Common System Types (Domains)<br>
-Business / Enterprise Systems<br>
-HMS — Hospital Management System<br>
-HRMS — Human Resource Management System<br>
-ERP — Enterprise Resource Planning<br>
-CRM — Customer Relationship Management<br>
-CMS — Content Management System<br>
-TMS — Transport Management System<br>
-LMS — Learning Management System<br>
-EMS — Employee Management System<br>
-IMS — Inventory Management System<br>
-PMS — Project Management System<br>
-Finance / Banking Systems<br>
-LOS — Loan Origination System<br>
-LMS (Finance) — Loan Management System<br>
-AMS — Account Management System<br>
-BMS — Banking Management System<br>
-PMS (Finance) — Portfolio Management System<br>
-BFSI Systems — Banking, Financial Services, Insurance<br>
-Hospital / Healthcare Systems<br>
-HMS — Hospital Management System<br>
-EMR — Electronic Medical Records<br>
-EHR — Electronic Health Records<br>
-LIS — Laboratory Information System<br>
-RIS — Radiology Information System<br>
-PACS — Medical Image System<br>
-Logistics / Transport Systems<br>
-TMS — Transport Management System<br>
-WMS — Warehouse Management System<br>
-FMS — Fleet Management System<br>
-OMS — Order Management System<br>
-SCM — Supply Chain Management<br>
-E-Commerce Systems<br>
-OMS — Order Management System<br>
-PIM — Product Information Management<br>
-CMS — Content Management System<br>
-IMS — Inventory Management System<br>
-Payment Gateway System<br>
-Education Systems<br>
-LMS — Learning Management System<br>
-SMS — Student Management System<br>
-EMS — Education Management System<br>
-Exam Management System<br>
-IT / Software Systems<br>
-IAM — Identity Access Management<br>
-SSO — Single Sign On<br>
-Notification System<br>
-Audit Logging System<br>
-Workflow Management System<br>
-Most Popular Ones (Interviews Ask Often)</p>
-<p class="has-line-data" data-line-start="53" data-line-end="54">These 10 are most commonly used:</p>
-<p class="has-line-data" data-line-start="55" data-line-end="65">HMS<br>
-HRMS<br>
-CRM<br>
-ERP<br>
-CMS<br>
-LMS<br>
-TMS<br>
-OMS<br>
-IMS<br>
-WMS</p>
+# Domains
+
+These are commonly used software system types (domains) you'll see in companies and projects — especially useful for interviews.
+
+## Most Common System Types (Domains)
+
+### Business / Enterprise Systems
+- **HMS** — Hospital Management System
+- **HRMS** — Human Resource Management System
+- **ERP** — Enterprise Resource Planning
+- **CRM** — Customer Relationship Management
+- **CMS** — Content Management System
+- **TMS** — Transport Management System
+- **LMS** — Learning Management System
+- **EMS** — Employee Management System
+- **IMS** — Inventory Management System
+- **PMS** — Project Management System
+
+### Finance / Banking Systems
+- **LOS** — Loan Origination System
+- **LMS (Finance)** — Loan Management System
+- **AMS** — Account Management System
+- **BMS** — Banking Management System
+- **PMS (Finance)** — Portfolio Management System
+- **BFSI Systems** — Banking, Financial Services, Insurance
+
+### Hospital / Healthcare Systems
+- **HMS** — Hospital Management System
+- **EMR** — Electronic Medical Records
+- **EHR** — Electronic Health Records
+- **LIS** — Laboratory Information System
+- **RIS** — Radiology Information System
+- **PACS** — Medical Image System
+
+### Logistics / Transport Systems
+- **TMS** — Transport Management System
+- **WMS** — Warehouse Management System
+- **FMS** — Fleet Management System
+- **OMS** — Order Management System
+- **SCM** — Supply Chain Management
+
+### E-Commerce Systems
+- **OMS** — Order Management System
+- **PIM** — Product Information Management
+- **CMS** — Content Management System
+- **IMS** — Inventory Management System
+- **Payment Gateway System**
+
+### Education Systems
+- **LMS** — Learning Management System
+- **SMS** — Student Management System
+- **EMS** — Education Management System
+- **Exam Management System**
+
+### IT / Software Systems
+- **IAM** — Identity Access Management
+- **SSO** — Single Sign On
+- **Notification System**
+- **Audit Logging System**
+- **Workflow Management System**
+
+## Most Popular Ones (Interviews Ask Often)
+
+These 10 are most commonly used:
+
+1. **HMS**
+2. **HRMS**
+3. **CRM**
+4. **ERP**
+5. **CMS**
+6. **LMS**
+7. **TMS**
+8. **OMS**
+9. **IMS**
+10. **WMS**
